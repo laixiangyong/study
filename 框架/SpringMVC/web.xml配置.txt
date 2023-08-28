@@ -1,0 +1,17 @@
+<!--配置springMVC前端控制器，对浏览器发送的请求进行统一处理-->
+    <servlet>
+        <servlet-name>SpringMVC</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--配置springMVC配置文件的位置和名称-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:java-01-web.xml</param-value>
+        </init-param>
+        <!--将前端控制器DispatcherServlet的初始化时间提前到服务器启动时-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SpringMVC</servlet-name>
+        <!--只写“/”不能匹配jsp请求路径的请求-->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
